@@ -1,0 +1,11 @@
+---
+- name: Verify application services
+  hosts: all
+  become: true
+  become_user: root
+  tasks:
+    - name: verify App/database are running or not
+      shell: if ps -eaf| egrep 'httpd'| grep -v grep > /tmp/service; then echo 'proscess is running'; else echo 'process not running'; fi
+      ignore_errors: true
+      register: app_process_check
+    - debug: msg="{{ app_process_check.stdout }}"
