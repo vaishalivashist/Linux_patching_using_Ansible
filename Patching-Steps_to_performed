@@ -1,0 +1,9 @@
+Patching:
+Verify the application/database process are running or not
+Decision point to start patching
+copy thr required Repo file to the Managed host
+Upgrade the Kernal or packages
+check if reboot is required after kernal update
+reboot the system
+wait for few min, so that server should came up after reboot
+debug a message with new kernal version
